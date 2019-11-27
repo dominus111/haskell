@@ -16,8 +16,8 @@ approxSqrt :: Double -> Double -> Double
 approxSqrt d eps
     | d < 0 = error "Invalid number"
     | eps <= 0 = error "Invalid number"
-    | otherwise = approxSqrt' d eps ((1 + d) / 2)
+    | otherwise = approxSqrt' d eps 1
 
 approxSqrt' :: Double -> Double -> Double -> Double
 approxSqrt' d eps x | abs((sqrt d) - x) < eps = x
-                    | otherwise = approxSqrt' d eps (x + d/x) / 2
+                    | otherwise = approxSqrt' d eps ((x + d/x) / 2)
