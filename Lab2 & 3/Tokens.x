@@ -43,5 +43,6 @@ data Token =
   deriving (Eq,Show) 
 
 tokenPosn :: Token -> String
-tokenPosn (TokenVar (AlexPn a l c) _) = show(l) ++ ":" ++ show(c)
+tokenPosn (TokenTimes (AlexPn a l c)) = show(l) ++ ":" ++ show(c)
+
 }

@@ -3842,7 +3842,8 @@ data Token =
   deriving (Eq,Show) 
 
 tokenPosn :: Token -> String
-tokenPosn (TokenVar (AlexPn a l c) _) = show(l) ++ ":" ++ show(c)
+tokenPosn (TokenTimes (AlexPn a l c)) = show(l) ++ ":" ++ show(c)
+
 
 alex_action_2 =  \p s -> TokenLet p
 alex_action_3 =  \p s -> TokenIn p
